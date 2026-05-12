@@ -166,6 +166,113 @@
     .contact-label { font-size: 11px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1px; }
     .contact-val { font-size: 13px; color: var(--text); }
 
+    /* ── SAMPLE WORKS ── */
+    .works-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .works-filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .work-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      background: var(--bg2);
+    }
+    .work-card:hover {
+      border-color: #c5d8ff;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.1);
+      transform: translateY(-2px);
+    }
+    .work-thumb {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+    .work-info { padding: 0.9rem 1rem; }
+    .work-title { font-weight: 600; font-size: 13px; margin-bottom: 0.25rem; }
+    .work-desc { font-size: 12px; color: var(--muted); margin-bottom: 0.6rem; line-height: 1.5; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .work-tag { font-size: 10.5px; padding: 0.1rem 0.45rem; background: var(--accent-light); color: var(--accent); border-radius: 3px; font-weight: 500; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner { position: relative; max-width: 900px; width: 100%; }
+    .lightbox-img { width: 100%; border-radius: 10px; display: block; max-height: 80vh; object-fit: contain; }
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-prev { left: -3.2rem; }
+    .lightbox-next { right: -3.2rem; }
+    .lightbox-caption { text-align: center; color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 0.75rem; }
+
     footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; font-size: 12px; color: var(--muted); }
 
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -175,8 +282,11 @@
       .nav-links { display: none; }
       .projects-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
+      .works-grid { grid-template-columns: 1fr; }
       .hero { padding: 3rem 1.5rem 2.5rem; }
       section { padding: 2.5rem 1.5rem; }
+      .lightbox-prev { left: -0.5rem; }
+      .lightbox-next { right: -0.5rem; }
     }
   </style>
 </head>
@@ -190,6 +300,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#works">Sample Works</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -201,6 +312,7 @@
   <p>QA Engineer — CS graduate with hands-on experience in manual testing, API testing, and bug documentation. Based in Manila, PH.</p>
   <div class="hero-links">
     <a href="#contact" class="btn btn-primary">Contact Me</a>
+    <a href="#works" class="btn btn-ghost">Sample Works ↓</a>
     <a href="https://github.com/glensks" target="_blank" class="btn btn-ghost">GitHub ↗</a>
     <a href="https://mail.google.com/mail/?view=cm&to=glen.tagubase03@gmail.com" target="_blank" class="btn btn-ghost">Email</a>
   </div>
@@ -293,6 +405,126 @@
 
 <hr/>
 
+<!-- ── SAMPLE WORKS ── -->
+<section id="works" class="reveal">
+  <div class="works-header">
+    <p class="section-label" style="margin-bottom:0;">Sample Works</p>
+    <div class="works-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="api">API Testing</button>
+      <button class="filter-btn" data-filter="ui">UI / Frontend</button>
+    </div>
+  </div>
+
+  <div class="works-grid">
+    <div class="work-card" data-category="api" onclick="openLightbox(0)">
+      <img class="work-thumb" src="work1.png" alt="PUT /admin/students/1/status — 200 OK"/>
+      <div class="work-info">
+        <div class="work-title">Student Status Update — API</div>
+        <div class="work-desc">PUT endpoint updating a student's status to "approved". Verified 200 OK response via Postman.</div>
+        <div class="work-tags">
+          <span class="work-tag">Postman</span>
+          <span class="work-tag">REST API</span>
+          <span class="work-tag">200 OK</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="api" onclick="openLightbox(1)">
+      <img class="work-thumb" src="work2.png" alt="PUT /admin/students/:id/status — 400 Bad Request"/>
+      <div class="work-info">
+        <div class="work-title">Validation Error — Bug Report</div>
+        <div class="work-desc">400 Bad Request caught when required "Status" field is missing. Documented as a defect with field-validation failure detail.</div>
+        <div class="work-tags">
+          <span class="work-tag">Postman</span>
+          <span class="work-tag">400 Error</span>
+          <span class="work-tag">Validation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="api" onclick="openLightbox(2)">
+      <img class="work-thumb" src="work3.png" alt="POST /register-student — 200 OK"/>
+      <div class="work-info">
+        <div class="work-title">Student Registration — API</div>
+        <div class="work-desc">POST endpoint registering a new student. Confirmed success message "Awaiting approval" returned with 200 OK.</div>
+        <div class="work-tags">
+          <span class="work-tag">Postman</span>
+          <span class="work-tag">POST</span>
+          <span class="work-tag">200 OK</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="api" onclick="openLightbox(3)">
+      <img class="work-thumb" src="work4.png" alt="POST /login — JWT Token Response"/>
+      <div class="work-info">
+        <div class="work-title">Admin Login — JWT Auth</div>
+        <div class="work-desc">Login API returning a JWT token, role, and redirect path. Verified token structure and role-based redirection.</div>
+        <div class="work-tags">
+          <span class="work-tag">Postman</span>
+          <span class="work-tag">JWT</span>
+          <span class="work-tag">Auth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="ui" onclick="openLightbox(4)">
+      <img class="work-thumb" src="work5.png" alt="Student Information System — Login Page"/>
+      <div class="work-info">
+        <div class="work-title">Student Portal — Login UI</div>
+        <div class="work-desc">Tested the student login page UI — form validation, field constraints, and login flow for the Student Information System.</div>
+        <div class="work-tags">
+          <span class="work-tag">UI Testing</span>
+          <span class="work-tag">Functional</span>
+          <span class="work-tag">Go/Gin</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="ui" onclick="openLightbox(5)">
+      <img class="work-thumb" src="work6.png" alt="Admin Dashboard"/>
+      <div class="work-info">
+        <div class="work-title">Admin Dashboard — User Metrics</div>
+        <div class="work-desc">Validated dashboard KPI counts (total users, active users, students, teachers) against live database records.</div>
+        <div class="work-tags">
+          <span class="work-tag">UI Testing</span>
+          <span class="work-tag">Dashboard</span>
+          <span class="work-tag">Data Integrity</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="ui" onclick="openLightbox(6)">
+      <img class="work-thumb" src="work7.png" alt="Records Portal Dashboard"/>
+      <div class="work-info">
+        <div class="work-title">Records Portal — Document Requests</div>
+        <div class="work-desc">Tested the Records Staff dashboard — document request listing, status filtering, and empty-state handling.</div>
+        <div class="work-tags">
+          <span class="work-tag">UI Testing</span>
+          <span class="work-tag">Regression</span>
+          <span class="work-tag">Role-based</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card" data-category="ui" onclick="openLightbox(7)">
+      <img class="work-thumb" src="work8.png" alt="Student Dashboard"/>
+      <div class="work-info">
+        <div class="work-title">Student Dashboard — Enrollment View</div>
+        <div class="work-desc">Verified student-facing dashboard showing enrolled subjects, units, billing balance, and latest announcements.</div>
+        <div class="work-tags">
+          <span class="work-tag">E2E Testing</span>
+          <span class="work-tag">Student Role</span>
+          <span class="work-tag">UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr/>
+
 <section id="tech" class="reveal">
   <p class="section-label">Technical Stack</p>
   <div class="tech-rows">
@@ -366,7 +598,19 @@
 
 <footer>© 2026 Glen Aldrin F. Tagubase · QA Engineer</footer>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="shiftLightbox(-1)">‹</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+    <button class="lightbox-nav lightbox-next" onclick="shiftLightbox(1)">›</button>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
 <script>
+  // Scroll reveal
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
@@ -377,6 +621,60 @@
     });
   }, { threshold: 0.08 });
   els.forEach(el => obs.observe(el));
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.work-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  // Lightbox
+  const images = ['work1.png','work2.png','work3.png','work4.png','work5.png','work6.png','work7.png','work8.png'];
+  const captions = [
+    'PUT /admin/students/1/status — 200 OK',
+    'PUT /admin/students/:id/status — 400 Bad Request (missing Status field)',
+    'POST /register-student — 200 OK',
+    'POST /login — JWT Auth Response',
+    'Student Information System — Login Page',
+    'Admin Dashboard — User Metrics',
+    'Records Portal — Document Requests',
+    'Student Dashboard — Enrollment View'
+  ];
+  let current = 0;
+
+  function openLightbox(idx) {
+    current = idx;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeLightboxOutside(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+  function shiftLightbox(dir) {
+    current = (current + dir + images.length) % images.length;
+    updateLightbox();
+  }
+  function updateLightbox() {
+    document.getElementById('lightbox-img').src = images[current];
+    document.getElementById('lightbox-caption').textContent = captions[current];
+  }
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') shiftLightbox(-1);
+    if (e.key === 'ArrowRight') shiftLightbox(1);
+  });
 </script>
 
 </body>
