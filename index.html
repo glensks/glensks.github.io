@@ -7,121 +7,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #ffffff;
-      --bg2: #f7f7f7;
-      --border: #e8e8e8;
-      --text: #1c1c1c;
-      --muted: #777;
-      --accent: #2563eb;
-      --accent-light: #eff6ff;
+      --bg: #ffffff; --bg2: #f7f7f7; --border: #e8e8e8;
+      --text: #1c1c1c; --muted: #777; --accent: #2563eb; --accent-light: #eff6ff;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 0 2rem;
-    }
-    .nav-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+    nav { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 2rem; }
+    .nav-inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
     .nav-logo { font-weight: 600; font-size: 15px; color: var(--text); text-decoration: none; }
     .nav-links { display: flex; gap: 1.8rem; list-style: none; }
     .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
-
-    .hero {
-      padding: 5rem 2rem 4rem;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 500;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
-    }
+    .hero { padding: 5rem 2rem 4rem; max-width: 760px; margin: 0 auto; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--accent-light); color: var(--accent); font-size: 12px; font-weight: 500; padding: 0.3rem 0.8rem; border-radius: 20px; margin-bottom: 1.5rem; }
     .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
     .hero h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
     .hero p { color: var(--muted); max-width: 520px; margin-bottom: 2rem; font-size: 15px; }
     .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.2rem;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.15s;
-      font-family: 'Inter', sans-serif;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.2rem; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.15s; font-family: 'Inter', sans-serif; }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #1d4ed8; }
     .btn-ghost { background: var(--bg2); color: var(--text); border: 1px solid var(--border); }
     .btn-ghost:hover { border-color: #bbb; background: #f0f0f0; }
-
     hr { border: none; border-top: 1px solid var(--border); }
-
-    section {
-      padding: 3.5rem 2rem;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-
+    section { padding: 3.5rem 2rem; max-width: 760px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
     .about-text { color: var(--muted); max-width: 600px; font-size: 15px; }
-
     .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill {
-      padding: 0.35rem 0.9rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      font-size: 13px;
-      color: var(--text);
-    }
-
-    .exp-item {
-      padding: 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
+    .skill { padding: 0.35rem 0.9rem; background: var(--bg2); border: 1px solid var(--border); border-radius: 5px; font-size: 13px; color: var(--text); }
+    .exp-item { padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.3rem; flex-wrap: wrap; }
     .exp-title { font-weight: 600; font-size: 15px; }
     .exp-date { font-size: 12px; color: var(--muted); white-space: nowrap; margin-top: 2px; }
@@ -129,14 +44,8 @@
     .exp-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .exp-list li { font-size: 13.5px; color: var(--muted); padding-left: 1rem; position: relative; }
     .exp-list li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-size: 16px; line-height: 1.5; }
-
     .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .project-card {
-      padding: 1.4rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
+    .project-card { padding: 1.4rem; border: 1px solid var(--border); border-radius: 8px; transition: border-color 0.2s, box-shadow 0.2s; }
     .project-card:hover { border-color: #c5d8ff; box-shadow: 0 2px 12px rgba(37,99,235,0.07); }
     .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
     .project-name { font-weight: 600; font-size: 14px; }
@@ -147,18 +56,15 @@
     .project-points { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
     .project-points li { font-size: 12.5px; color: var(--muted); padding-left: 0.9rem; position: relative; }
     .project-points li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-size: 16px; line-height: 1.4; }
-
     .tech-rows { display: flex; flex-direction: column; }
     .tech-row { display: flex; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); align-items: baseline; }
     .tech-row:last-child { border-bottom: none; }
     .tech-label { font-size: 12px; font-weight: 500; color: var(--muted); width: 110px; flex-shrink: 0; }
     .tech-value { font-size: 13.5px; color: var(--text); }
-
     .edu-card { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; gap: 1rem; flex-wrap: wrap; }
     .edu-degree { font-weight: 600; font-size: 15px; margin-bottom: 0.2rem; }
     .edu-school { font-size: 13px; color: var(--muted); }
     .edu-years { font-size: 13px; color: var(--muted); white-space: nowrap; }
-
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
     .contact-item { display: flex; align-items: center; gap: 0.8rem; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); transition: border-color 0.2s; }
     .contact-item:hover { border-color: var(--accent); }
@@ -166,123 +72,65 @@
     .contact-label { font-size: 11px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1px; }
     .contact-val { font-size: 13px; color: var(--text); }
 
-    /* ── SAMPLE WORKS ── */
-    .works-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
+    /* SAMPLE WORKS */
+    .works-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
     .works-filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .filter-btn {
-      padding: 0.3rem 0.85rem;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      border: 1px solid var(--border);
-      background: var(--bg2);
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.15s;
-      font-family: 'Inter', sans-serif;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    .work-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-      cursor: pointer;
-      background: var(--bg2);
-    }
-    .work-card:hover {
-      border-color: #c5d8ff;
-      box-shadow: 0 4px 20px rgba(37,99,235,0.1);
-      transform: translateY(-2px);
-    }
-    .work-thumb {
-      width: 100%;
-      aspect-ratio: 16/10;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      border-bottom: 1px solid var(--border);
-    }
+    .filter-btn { padding: 0.3rem 0.85rem; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); background: var(--bg2); color: var(--muted); cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; }
+    .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .work-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; cursor: pointer; background: var(--bg2); }
+    .work-card:hover { border-color: #c5d8ff; box-shadow: 0 4px 20px rgba(37,99,235,0.1); transform: translateY(-2px); }
+    .work-thumb { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--border); }
     .work-info { padding: 0.9rem 1rem; }
     .work-title { font-weight: 600; font-size: 13px; margin-bottom: 0.25rem; }
     .work-desc { font-size: 12px; color: var(--muted); margin-bottom: 0.6rem; line-height: 1.5; }
     .work-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
     .work-tag { font-size: 10.5px; padding: 0.1rem 0.45rem; background: var(--accent-light); color: var(--accent); border-radius: 3px; font-weight: 500; }
+    .work-tag.fail { background: #fff0f0; color: #dc2626; }
+    .work-tag.pass { background: #f0fdf4; color: #16a34a; }
+    .work-tag.critical { background: #fff7ed; color: #ea580c; }
+    .work-tag.golang { background: #e0f2fe; color: #0369a1; }
+    .work-tag.csharp { background: #f3e8ff; color: #7c3aed; }
+    .works-group-label {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.1rem;
+    }
+    .works-group-label span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .works-group-label .gl { background: #e0f2fe; color: #0369a1; }
+    .works-group-label .cs { background: #f3e8ff; color: #7c3aed; }
+    .works-group-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 999; align-items: center; justify-content: center; padding: 1.5rem; }
     .lightbox.open { display: flex; }
     .lightbox-inner { position: relative; max-width: 900px; width: 100%; }
     .lightbox-img { width: 100%; border-radius: 10px; display: block; max-height: 80vh; object-fit: contain; }
-    .lightbox-close {
-      position: absolute;
-      top: -2.5rem;
-      right: 0;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 22px;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: #fff;
-      font-size: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.15s;
-    }
+    .lightbox-close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; line-height: 1; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 20px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
     .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
     .lightbox-prev { left: -3.2rem; }
     .lightbox-next { right: -3.2rem; }
     .lightbox-caption { text-align: center; color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 0.75rem; }
 
     footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; font-size: 12px; color: var(--muted); }
-
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-width: 640px) {
       .nav-links { display: none; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .works-grid { grid-template-columns: 1fr; }
+      .projects-grid, .works-grid, .contact-grid { grid-template-columns: 1fr; }
       .hero { padding: 3rem 1.5rem 2.5rem; }
       section { padding: 2.5rem 1.5rem; }
       .lightbox-prev { left: -0.5rem; }
@@ -373,10 +221,7 @@
         <a href="https://github.com/glensks/student-portal" target="_blank" class="project-link">GitHub ↗</a>
       </div>
       <div class="project-stack">
-        <span class="tag">Go/Gin</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Railway</span>
+        <span class="tag">Go/Gin</span><span class="tag">MySQL</span><span class="tag">Docker</span><span class="tag">Railway</span>
       </div>
       <ul class="project-points">
         <li>Authored full test plan covering enrollment, grades, payments, and notifications.</li>
@@ -390,9 +235,7 @@
         <a href="https://github.com/glensks/bus_management" target="_blank" class="project-link">GitHub ↗</a>
       </div>
       <div class="project-stack">
-        <span class="tag">C#/.NET 8</span>
-        <span class="tag">WinForms</span>
-        <span class="tag">MySQL</span>
+        <span class="tag">C#/.NET 8</span><span class="tag">WinForms</span><span class="tag">MySQL</span>
       </div>
       <ul class="project-points">
         <li>Designed test suites for Admin, Staff, and Passenger roles.</li>
@@ -405,121 +248,126 @@
 
 <hr/>
 
-<!-- ── SAMPLE WORKS ── -->
+<!-- SAMPLE WORKS -->
 <section id="works" class="reveal">
   <div class="works-header">
     <p class="section-label" style="margin-bottom:0;">Sample Works</p>
     <div class="works-filters">
       <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="golang">Go / Gin</button>
+      <button class="filter-btn" data-filter="csharp">C# / .NET</button>
       <button class="filter-btn" data-filter="api">API Testing</button>
       <button class="filter-btn" data-filter="ui">UI / Frontend</button>
+      <button class="filter-btn" data-filter="test">Test Execution</button>
     </div>
   </div>
 
   <div class="works-grid">
-    <div class="work-card" data-category="api" onclick="openLightbox(0)">
-      <img class="work-thumb" src="work1.png" alt="PUT /admin/students/1/status — 200 OK"/>
+
+    <!-- GROUP: Go/Gin -->
+    <div class="works-group-label"><span class="gl">Go / Gin — Student Portal System</span></div>
+
+    <div class="work-card" data-category="api golang" onclick="openLightbox(0)">
+      <img class="work-thumb" src="work1.png" alt="PUT status 200 OK"/>
       <div class="work-info">
         <div class="work-title">Student Status Update — API</div>
         <div class="work-desc">PUT endpoint updating a student's status to "approved". Verified 200 OK response via Postman.</div>
-        <div class="work-tags">
-          <span class="work-tag">Postman</span>
-          <span class="work-tag">REST API</span>
-          <span class="work-tag">200 OK</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">Postman</span><span class="work-tag">REST API</span><span class="work-tag pass">200 OK</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="api" onclick="openLightbox(1)">
-      <img class="work-thumb" src="work2.png" alt="PUT /admin/students/:id/status — 400 Bad Request"/>
+    <div class="work-card" data-category="api golang" onclick="openLightbox(1)">
+      <img class="work-thumb" src="work2.png" alt="400 Bad Request"/>
       <div class="work-info">
         <div class="work-title">Validation Error — Bug Report</div>
         <div class="work-desc">400 Bad Request caught when required "Status" field is missing. Documented as a defect with field-validation failure detail.</div>
-        <div class="work-tags">
-          <span class="work-tag">Postman</span>
-          <span class="work-tag">400 Error</span>
-          <span class="work-tag">Validation</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">Postman</span><span class="work-tag fail">400 Error</span><span class="work-tag">Validation</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="api" onclick="openLightbox(2)">
-      <img class="work-thumb" src="work3.png" alt="POST /register-student — 200 OK"/>
+    <div class="work-card" data-category="api golang" onclick="openLightbox(2)">
+      <img class="work-thumb" src="work3.png" alt="POST register 200 OK"/>
       <div class="work-info">
         <div class="work-title">Student Registration — API</div>
         <div class="work-desc">POST endpoint registering a new student. Confirmed success message "Awaiting approval" returned with 200 OK.</div>
-        <div class="work-tags">
-          <span class="work-tag">Postman</span>
-          <span class="work-tag">POST</span>
-          <span class="work-tag">200 OK</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">Postman</span><span class="work-tag">POST</span><span class="work-tag pass">200 OK</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="api" onclick="openLightbox(3)">
-      <img class="work-thumb" src="work4.png" alt="POST /login — JWT Token Response"/>
+    <div class="work-card" data-category="api golang" onclick="openLightbox(3)">
+      <img class="work-thumb" src="work4.png" alt="JWT Auth"/>
       <div class="work-info">
         <div class="work-title">Admin Login — JWT Auth</div>
         <div class="work-desc">Login API returning a JWT token, role, and redirect path. Verified token structure and role-based redirection.</div>
-        <div class="work-tags">
-          <span class="work-tag">Postman</span>
-          <span class="work-tag">JWT</span>
-          <span class="work-tag">Auth</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">Postman</span><span class="work-tag">JWT</span><span class="work-tag">Auth</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="ui" onclick="openLightbox(4)">
-      <img class="work-thumb" src="work5.png" alt="Student Information System — Login Page"/>
+    <div class="work-card" data-category="ui golang" onclick="openLightbox(4)">
+      <img class="work-thumb" src="work5.png" alt="Login Page"/>
       <div class="work-info">
         <div class="work-title">Student Portal — Login UI</div>
         <div class="work-desc">Tested the student login page UI — form validation, field constraints, and login flow for the Student Information System.</div>
-        <div class="work-tags">
-          <span class="work-tag">UI Testing</span>
-          <span class="work-tag">Functional</span>
-          <span class="work-tag">Go/Gin</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">UI Testing</span><span class="work-tag">Functional</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="ui" onclick="openLightbox(5)">
+    <div class="work-card" data-category="ui golang" onclick="openLightbox(5)">
       <img class="work-thumb" src="work6.png" alt="Admin Dashboard"/>
       <div class="work-info">
         <div class="work-title">Admin Dashboard — User Metrics</div>
         <div class="work-desc">Validated dashboard KPI counts (total users, active users, students, teachers) against live database records.</div>
-        <div class="work-tags">
-          <span class="work-tag">UI Testing</span>
-          <span class="work-tag">Dashboard</span>
-          <span class="work-tag">Data Integrity</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">UI Testing</span><span class="work-tag">Data Integrity</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="ui" onclick="openLightbox(6)">
-      <img class="work-thumb" src="work7.png" alt="Records Portal Dashboard"/>
+    <div class="work-card" data-category="ui golang" onclick="openLightbox(6)">
+      <img class="work-thumb" src="work7.png" alt="Records Portal"/>
       <div class="work-info">
         <div class="work-title">Records Portal — Document Requests</div>
         <div class="work-desc">Tested the Records Staff dashboard — document request listing, status filtering, and empty-state handling.</div>
-        <div class="work-tags">
-          <span class="work-tag">UI Testing</span>
-          <span class="work-tag">Regression</span>
-          <span class="work-tag">Role-based</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">UI Testing</span><span class="work-tag">Regression</span></div>
       </div>
     </div>
-
-    <div class="work-card" data-category="ui" onclick="openLightbox(7)">
+    <div class="work-card" data-category="ui golang" onclick="openLightbox(7)">
       <img class="work-thumb" src="work8.png" alt="Student Dashboard"/>
       <div class="work-info">
         <div class="work-title">Student Dashboard — Enrollment View</div>
         <div class="work-desc">Verified student-facing dashboard showing enrolled subjects, units, billing balance, and latest announcements.</div>
-        <div class="work-tags">
-          <span class="work-tag">E2E Testing</span>
-          <span class="work-tag">Student Role</span>
-          <span class="work-tag">UI</span>
-        </div>
+        <div class="work-tags"><span class="work-tag golang">Go/Gin</span><span class="work-tag">E2E Testing</span><span class="work-tag">Student Role</span></div>
       </div>
     </div>
+
+    <!-- GROUP: C# / .NET -->
+    <div class="works-group-label"><span class="cs">C# / .NET 8 — Bus Management System</span></div>
+
+    <div class="work-card" data-category="test csharp" onclick="openLightbox(8)">
+      <img class="work-thumb" src="work9.png" alt="Test 1 FAIL"/>
+      <div class="work-info">
+        <div class="work-title">Login — Wrong Password (Negative Test)</div>
+        <div class="work-desc">Test 1: Valid username with wrong password. Expected "Invalid credentials" error message to appear.</div>
+        <div class="work-tags"><span class="work-tag csharp">C#/.NET</span><span class="work-tag">Negative Test</span><span class="work-tag fail">FAIL</span></div>
+      </div>
+    </div>
+    <div class="work-card" data-category="test csharp" onclick="openLightbox(9)">
+      <img class="work-thumb" src="work10.png" alt="Test 1 PASS"/>
+      <div class="work-info">
+        <div class="work-title">Login — Valid Credentials (Positive Test)</div>
+        <div class="work-desc">Test 1: Valid username and password. Dashboard opened successfully — system redirected correctly.</div>
+        <div class="work-tags"><span class="work-tag csharp">C#/.NET</span><span class="work-tag">Positive Test</span><span class="work-tag pass">PASS</span></div>
+      </div>
+    </div>
+    <div class="work-card" data-category="test csharp" onclick="openLightbox(10)">
+      <img class="work-thumb" src="work11.png" alt="Empty Fields PASS"/>
+      <div class="work-info">
+        <div class="work-title">Login — Empty Fields Validation</div>
+        <div class="work-desc">Empty username and password submitted. System correctly showed "Please enter both username and password" warning.</div>
+        <div class="work-tags"><span class="work-tag csharp">C#/.NET</span><span class="work-tag">Boundary Test</span><span class="work-tag pass">PASS</span></div>
+      </div>
+    </div>
+    <div class="work-card" data-category="test csharp" onclick="openLightbox(11)">
+      <img class="work-thumb" src="work12.png" alt="System Crash Bug"/>
+      <div class="work-info">
+        <div class="work-title">Critical Bug — System Crash on Empty Fields</div>
+        <div class="work-desc">Empty field input caused an unhandled exception and application crash. Documented as Critical severity defect with IDE stack trace evidence.</div>
+        <div class="work-tags"><span class="work-tag csharp">C#/.NET</span><span class="work-tag critical">Critical Bug</span><span class="work-tag fail">CRASH</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -528,22 +376,10 @@
 <section id="tech" class="reveal">
   <p class="section-label">Technical Stack</p>
   <div class="tech-rows">
-    <div class="tech-row">
-      <span class="tech-label">Languages</span>
-      <span class="tech-value">Go (Gin), C# (.NET 8), HTML, CSS, JavaScript</span>
-    </div>
-    <div class="tech-row">
-      <span class="tech-label">Database</span>
-      <span class="tech-value">MySQL, HeidiSQL, SQL</span>
-    </div>
-    <div class="tech-row">
-      <span class="tech-label">Testing Tools</span>
-      <span class="tech-value">Postman, manual test execution, bug documentation</span>
-    </div>
-    <div class="tech-row">
-      <span class="tech-label">Dev Tools</span>
-      <span class="tech-value">Git, GitHub, Docker, Railway</span>
-    </div>
+    <div class="tech-row"><span class="tech-label">Languages</span><span class="tech-value">Go (Gin), C# (.NET 8), HTML, CSS, JavaScript</span></div>
+    <div class="tech-row"><span class="tech-label">Database</span><span class="tech-value">MySQL, HeidiSQL, SQL</span></div>
+    <div class="tech-row"><span class="tech-label">Testing Tools</span><span class="tech-value">Postman, manual test execution, bug documentation</span></div>
+    <div class="tech-row"><span class="tech-label">Dev Tools</span><span class="tech-value">Git, GitHub, Docker, Railway</span></div>
   </div>
 </section>
 
@@ -567,31 +403,19 @@
   <div class="contact-grid">
     <a href="https://mail.google.com/mail/?view=cm&to=glen.tagubase03@gmail.com" target="_blank" class="contact-item">
       <div class="contact-icon">✉️</div>
-      <div>
-        <div class="contact-label">Email</div>
-        <div class="contact-val">glen.tagubase03@gmail.com</div>
-      </div>
+      <div><div class="contact-label">Email</div><div class="contact-val">glen.tagubase03@gmail.com</div></div>
     </a>
     <a href="tel:09671139281" class="contact-item">
       <div class="contact-icon">📞</div>
-      <div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-val">0967 113 9281</div>
-      </div>
+      <div><div class="contact-label">Phone</div><div class="contact-val">0967 113 9281</div></div>
     </a>
     <a href="https://github.com/glensks" target="_blank" class="contact-item">
       <div class="contact-icon">💻</div>
-      <div>
-        <div class="contact-label">GitHub</div>
-        <div class="contact-val">github.com/glensks</div>
-      </div>
+      <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/glensks</div></div>
     </a>
     <div class="contact-item">
       <div class="contact-icon">📍</div>
-      <div>
-        <div class="contact-label">Location</div>
-        <div class="contact-val">Paco, Manila, Philippines</div>
-      </div>
+      <div><div class="contact-label">Location</div><div class="contact-val">Paco, Manila, Philippines</div></div>
     </div>
   </div>
 </section>
@@ -610,45 +434,61 @@
 </div>
 
 <script>
-  // Scroll reveal
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 60);
-        obs.unobserve(e.target);
-      }
-    });
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   els.forEach(el => obs.observe(el));
 
-  // Filter buttons
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.work-card').forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        const cats = card.dataset.category.split(' ');
+        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+      });
+      // Show/hide group labels based on visible cards after them
+      document.querySelectorAll('.works-group-label').forEach(label => {
+        let sibling = label.nextElementSibling;
+        let hasVisible = false;
+        while (sibling && !sibling.classList.contains('works-group-label')) {
+          if (sibling.style.display !== 'none') { hasVisible = true; break; }
+          sibling = sibling.nextElementSibling;
+        }
+        label.style.display = hasVisible ? '' : 'none';
       });
     });
   });
 
-  // Lightbox
-  const images = ['work1.png','work2.png','work3.png','work4.png','work5.png','work6.png','work7.png','work8.png'];
+  const images = ['work1.png','work2.png','work3.png','work4.png','work5.png','work6.png','work7.png','work8.png','work9.png','work10.png','work11.png','work12.png'];
   const captions = [
     'PUT /admin/students/1/status — 200 OK',
-    'PUT /admin/students/:id/status — 400 Bad Request (missing Status field)',
+    'PUT /admin/students/:id/status — 400 Bad Request',
     'POST /register-student — 200 OK',
     'POST /login — JWT Auth Response',
     'Student Information System — Login Page',
     'Admin Dashboard — User Metrics',
     'Records Portal — Document Requests',
-    'Student Dashboard — Enrollment View'
+    'Student Dashboard — Enrollment View',
+    'Test 1: Valid Login + Wrong Password — ❌ FAIL',
+    'Test 1: Valid Login + Correct Password — ✅ PASS (Dashboard opened)',
+    'Empty Fields — ✅ PASS (Warning message appeared)',
+    'Empty Fields — ❌ CRITICAL BUG: System crash / unhandled exception'
   ];
   let current = 0;
+  let visibleIndices = [];
+
+  function buildVisibleIndices() {
+    visibleIndices = [];
+    document.querySelectorAll('.work-card').forEach((card, i) => {
+      if (card.style.display !== 'none') visibleIndices.push(i);
+    });
+  }
 
   function openLightbox(idx) {
+    buildVisibleIndices();
     current = idx;
     updateLightbox();
     document.getElementById('lightbox').classList.add('open');
@@ -662,7 +502,9 @@
     if (e.target === document.getElementById('lightbox')) closeLightbox();
   }
   function shiftLightbox(dir) {
-    current = (current + dir + images.length) % images.length;
+    const pos = visibleIndices.indexOf(current);
+    const next = (pos + dir + visibleIndices.length) % visibleIndices.length;
+    current = visibleIndices[next];
     updateLightbox();
   }
   function updateLightbox() {
@@ -676,6 +518,5 @@
     if (e.key === 'ArrowRight') shiftLightbox(1);
   });
 </script>
-
 </body>
 </html>
